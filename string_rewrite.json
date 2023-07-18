@@ -1,0 +1,71 @@
+[
+    {
+        "type": "struct definition",
+        "name": "String",
+        "fields": [
+            {
+                "type":
+                {
+                    "base type": "char",
+                    "array size": [ -1 ]
+                },
+                "name": "upperExpand"
+            },
+            {
+                "type":
+                {
+                    "base type": "char",
+                    "array size": [ -1 ]
+                },
+                "name": "upperSpecial"
+            },
+            {
+                "type":
+                {
+                    "base type": "char",
+                    "array size": [ -1 ]
+                },
+                "name": "value"
+            },
+            {
+                "type": "int",
+                "name": "count"
+            },
+            {
+                "type": "int",
+                "name": "offset"
+            }
+        ]
+    },
+    {
+        "type": "function definition",
+        "name": "String::length",
+        "parameters": [
+            {
+                "name": "s",
+                "type": "String"
+            }
+        ],
+        "statements": [
+            {
+                "line": "return s.count;"
+            }
+        ]
+    },
+    {
+        "type": "function definition",
+        "name": "String::equals",
+        "parameters": [
+            {
+                "name": "this",
+                "type": "String"
+            },
+            {
+                "name": "anObject",
+                "type": "Object"
+            }
+        ],
+        "statements": "if (!(anObject instanceof String))\nreturn false;\nString str2 = (String) anObject;\nif (this.count != str2.count)\nreturn false;\nif (this.value == str2.value && offset == str2.offset)\nreturn true;\nint i = this.count;\nint x = this.offset;\nint y = str2.offset;\nwhile (--i >= 0)\nif (this.value[x++] != str2.value[y++])\nreturn false;\nreturn true;",
+        "statements1": "if (!(anObject instanceof String))\nreturn false;\nString str2 = (String) anObject;\nif (this.count != str2.count)\nreturn false;\nif (this.value == str2.value && offset == str2.offset)\nreturn true;\nint i = this.count;\nint x = this.offset;\nint y = str2.offset;\nwhile (--i >= 0)\nif (this.value[x++] != str2.value[y++])\nreturn false;\nreturn true;"
+    }
+]
