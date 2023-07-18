@@ -1,27 +1,3 @@
-
-
-class SomethingToInterpret {
-    public static void main1(String s) {
-        String s1 = "111";
-        int a = 1;
-        if (s1.toUpperCase().equals(s))
-        {
-            a = 2;
-        }
-        while (a > 0) {
-            a--;
-        }
-    }
-}
-
-class NullTest {
-    public boolean nullTest(String isNull) {
-        if (isNull == null || isNull.isEmpty()) {
-            return true;
-        } else { return false; }
-    }
-}
-
 public class ArrayExample {
    public static void main(String[] args) {
       // Declare an array of integers
